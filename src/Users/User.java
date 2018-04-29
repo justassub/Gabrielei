@@ -15,7 +15,6 @@ public abstract class User {
     private String password;
     private List<Roles> authorities;
 
-
     public User() {
     }
 

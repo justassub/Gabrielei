@@ -19,7 +19,7 @@ public class Reader {
 
 
     public void readUsers() {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Bendras\\Desktop\\Gabriele\\customers.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("customers.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] array = line.split(" ");
@@ -33,7 +33,7 @@ public class Reader {
     }
 
     public void readItems() {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Bendras\\Desktop\\Gabriele\\items.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("items.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] array = line.split(" ");
@@ -41,6 +41,7 @@ public class Reader {
                     createItems(itemInfo);
                 }
             }
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -56,11 +57,12 @@ public class Reader {
     }
 
     public void readLogs() {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Bendras\\Desktop\\Gabriele\\logs.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("logs.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
             }
+            br.close();
         } catch (IOException e) {
             System.out.println("Something wrong with Logs.txt file+ " + e.getLocalizedMessage());
         }
@@ -92,20 +94,21 @@ public class Reader {
         }
     }
     public void registerClient(User user) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Bendras\\Desktop\\Gabriele\\customers.txt", true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("customers.txt", true))) {
             if (user instanceof Customer) {
                 bw.write(user.getUsername() + "," + user.getPassword() + "," + user.getAuthorities() + "," + ((Customer) user).getBalance() + "\n");
             } else {
                 bw.write(user.getUsername() + "," + user.getPassword() + "," + user.getAuthorities() + "\n");
             }
             System.out.println(user.getAuthorities() + " Was saved");
+            bw.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
         addUser(user);
     }
     private void itemWriter(List<Item> items) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Bendras\\Desktop\\Gabriele\\items.txt", false))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("items.txt", false))) {
             for(Item item:items){
                 bw.write(item.getItemName() +","+item.getPrice()+ "\n");
             }
@@ -115,8 +118,9 @@ public class Reader {
     }
 
     public void logWriter(String message) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Bendras\\Desktop\\Gabriele\\logs.txt", true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("logs.txt", true))) {
             bw.write(message + "\n");
+            bw.close();
         } catch (IOException e) {
             System.out.println("something wrong with logs.txt file . Imposible to write. "+e);
         }

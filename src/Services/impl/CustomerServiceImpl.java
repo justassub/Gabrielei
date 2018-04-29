@@ -16,17 +16,13 @@ public class CustomerServiceImpl  implements CustomerInterface{
     Scanner scanner = new Scanner(System.in);
     Reader reader = new Reader();
     Customer customer;
-
     public CustomerServiceImpl(User customer) {
         this.customer = (Customer) customer;
     }
-
     public void whatCustomerCanDo() {
-
         System.out.println(roles + " What do you want to do : 1.See all Products. 2. Add new Products To your List 3.Remove Products from your list" +
                 "4-Pay for products "+
                 "  By name q-shut down application."       );
-
         boolean choiseStatus = false;
         do {
             switch (scanner.nextLine()) {
@@ -50,7 +46,6 @@ public class CustomerServiceImpl  implements CustomerInterface{
                     break;
             }
         } while (!choiseStatus);
-
     }
 
     @Override
@@ -147,6 +142,8 @@ public class CustomerServiceImpl  implements CustomerInterface{
 
     @Override
     public void removeProductFromCart() {
+        //Gets name item you want to remove
+        String itemToRemove = null;
         System.out.println("your items in your cartList:");
         customer.getItemList().forEach((item -> System.out.println(item.getItemName()+" Price : "+item.getPrice())));
         System.out.println("Insert name of product you do not  want to buy: or insert 'q' to go back");
@@ -156,11 +153,17 @@ public class CustomerServiceImpl  implements CustomerInterface{
         }
         for(Item item : customer.getItemList()){
             if(item.getItemName().equals(productToRemove)){
-                System.out.println(item.getItemName()+" from your cart was removed");
-                customer.removeItem(item);
+                itemToRemove=item.getItemName();
+                break;
             }
         }
-        System.out.println("You do not have this product in your cart : "+ productToRemove);
+        if(itemToRemove==null){
+            System.out.println("Item was not found");
+        }else {
+            System.out.println(itemToRemove+" from your cart was removed");
+            customer.removeItem(itemToRemove);
+        }
+
         removeProductFromCart();
     }
 

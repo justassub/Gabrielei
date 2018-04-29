@@ -4,7 +4,10 @@ package Users;
 import Items.Item;
 
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Customer extends User {
 
@@ -28,15 +31,10 @@ public class Customer extends User {
     }
 
     public void addItem(Item item) {
-        List<Item> items = getItemList();
-        items.add(item);
-        setItemList(items);
+        getItemList().add(item);
     }
-
-    public void removeItem(Item item) {
-        List<Item> items = getItemList();
-        items.remove(item);
-        setItemList(items);
+    public void removeItem(String item) {
+        getItemList().removeIf((Item itemToRemove) -> itemToRemove.getItemName() ==item);
     }
 
 }
