@@ -1,0 +1,4 @@
+New 1 was registered. Sat May 12 21:23:23 IDT 2018
+New 1 was registered. Sat May 12 21:23:55 IDT 2018
+New 1 was registered. Sat May 12 21:26:22 IDT 2018
+New 1 bought products with credit card worth of : . 900.0$ Sat May 12 22:05:08 IDT 2018

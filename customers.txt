@@ -1,3 +1,0 @@
-em,em,[EMPLOYEE]
-a,a,[EMPLOYEE]
-c,c,[CUSTOMER],1000.0
