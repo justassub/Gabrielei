@@ -30,7 +30,7 @@ public class Tshirt extends Product {
 	}
 	// Get Tshirt to string
 	public String TshirtToString() {
-		return "Product ID: " + getID() + ", Name: " + getName() + ", Price: " + getPrice() + " DKK" + "Size: " + getSize()
-				+ "Sex: " + getSex() + "Color: " + getColor();
+		return "Product ID: " + getID() + ", Name: " + getName() + ", Price: " + getPrice() + " DKK" + ", Size: " + getSize()
+				+ ", Sex: " + getSex() + ", Color: " + getColor();
 	}
 }

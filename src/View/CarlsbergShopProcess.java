@@ -77,7 +77,7 @@ public class CarlsbergShopProcess {
                 Scanner input = new Scanner(System.in);
                 // Prompt user input
                 System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
-                System.out.println("          WELCOME TO THE CUSTOMER PAGE! ");
+                System.out.println("          WELCOME TO THE USER PAGE! ");
                 System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
                 System.out.println("");
                 System.out.println("What do you want to do? Press one of the following:");
@@ -98,7 +98,7 @@ public class CarlsbergShopProcess {
 
                             String secretKey = input.next();
                             //Secret key for managers .
-                            if (!secretKey.equals("111")) {
+                            if (!secretKey.equals("1111")) {
                                 System.exit(1);
                             }
 

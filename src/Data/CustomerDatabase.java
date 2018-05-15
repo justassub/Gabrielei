@@ -46,7 +46,7 @@ public class CustomerDatabase {
     }
 
     private static User getCustomer(String customerInfo) {
-        System.out.println(customerInfo);
+        
         User customer = new User();
         String[] userInformationAsArray = customerInfo.split(";");
         //jei sarase paskutinis narys yra Manager - useris paverciamas is userio i manageri.

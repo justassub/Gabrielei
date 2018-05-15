@@ -10,7 +10,7 @@ public class User {
     private String firstName, lastName, address, username, password, telephone, creditCard, cprNumber;
     private int customerID;
     private static int count;
-    private List<Product> products=new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 
     public User() {
         count++;
@@ -98,15 +98,6 @@ public class User {
         return password;
     }
 
-    public void setUserName(String userName) {
-        this.username = userName;
-    }
-
-    public String getUserName() {
-        return username;
-    }
-
-
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
@@ -127,21 +118,13 @@ public class User {
     // Write a customer to a file
     public void writeCustomerToFile(String file) {
         //Cia padarysim transactiona logus
-        ReadAndWrite.WriteDetails("alltransactions.txt","New "+getCustomerID()+" was registered. "+new Date());
+        ReadAndWrite.WriteDetails("alltransactions.txt", "New " + getCustomerID() + " was registered. " + new Date());
 
 
         String details = getCustomerID() + ";" + getLastName() + ";" + getFirstName() + ";" + getUsername() + ";" + getPassword() + ";" + getAddress() + ";"
                 + getcprNumber() + ";" + getTelephone() + ";" + getCreditCard() + ";" + this.getClass().getName().substring(6);
         ReadAndWrite.WriteDetails(file, details);
 
-    }
-
-    public String getCprNumber() {
-        return cprNumber;
-    }
-
-    public void setCprNumber(String cprNumber) {
-        this.cprNumber = cprNumber;
     }
 
     public static int getCount() {
@@ -159,10 +142,13 @@ public class User {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-    public void addProduct(Product product){
+
+    public void addProduct(Product product) {
         products.add(product);
     }
-    public void removeProduct(Product product){
-        products.remove(product);
+
+    public void removeProduct(Product product) {
+        //Removes all user products with same ID
+        products.removeIf(product1 -> product.getID()==product1.getID());
     }
 }

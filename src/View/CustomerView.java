@@ -24,9 +24,8 @@ public class CustomerView {
         // Prompt the customer to login
         LogInView.customerLogin(customer);
         // Display available products
-        ProductView.displayAvailableProducts();
         // Select which products to buy and confirm
-        UserAddProducts.addProducts(customer);
+        UserAddProducts.whatDoYouWantToDo(customer);
         // Confirm personal details
 //        confirmCustomerDetails(customer);
 //        // Print receipt of purchased items
@@ -62,7 +61,6 @@ public class CustomerView {
         // not using validRegex here as
         // we check for valid birthdays including leap year in validCPR
         user.setcprNumber(validCPR());
-        System.out.println(user.getcprNumber());
         // User input for phone number
         System.out.println("Your phone number must have the format 12345678");
         // Set the phone number to input, phone number must be a digit of length
@@ -96,7 +94,7 @@ public class CustomerView {
 
         System.out.println();
         // Write the customer information to the customer file customer.txt
-        user.writeCustomerToFile("users.txt.txt");
+        user.writeCustomerToFile("users.txt");
         // Return the customer object
         return user;
     }
@@ -162,8 +160,7 @@ public class CustomerView {
             // then continue,
             // else print invalid input
             if (cpr.matches(regexCPR)) {
-                System.out.println(cpr);
-                return cpr;
+                continue;
             } else
                 System.out.println("Invalid input, format must be 123456-1234");
         }

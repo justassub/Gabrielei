@@ -45,13 +45,10 @@ public class ManagerView {
 			} catch (InputMismatchException e) {
 				System.out.print("Invalid input. \n");
 
-
 			}
 
 		}
 	}
-
-
 
 	public static void viewTransactions() throws IOException { //Level 2 Manager view to view transactions
 
@@ -67,7 +64,6 @@ public class ManagerView {
 		while (input.hasNextLine()) {
 			System.out.println(input.nextLine());
 		} 
-		
 		
 		//Starting user interface after printing transactions
 		int choice = -1;
