@@ -1,6 +1,0 @@
-Tshirt;7746;Tshit;900.0;M;;F;Blue;
-Beer;6101;Price;100.0;5;15L;7.0;
-Tshirt;7215;MArskiniai;900.0;M;;f;black;
-Beer;3690;Alus;900.0;900;PaprastasL;80.0;
-Beer;596;Paprastas;900.0;0.7;DarkL;7.0;
-Beer;3749;jhgj;900.0;5;uyiL;800.0;

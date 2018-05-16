@@ -1,8 +1,0 @@
-Tshirt;7746;Tshit;900.0;M;;;F;
-1;Customer;customer;2;2;Adress;123456-1234;12345678;1234-1234-1234-1234;User
-Tshirt;7746;Tshit;900.0;M;;;F;
-Tshirt;7746;Tshit;900.0;M;;;F;
-Tshirt;7746;Tshit;900.0;M;;;F;
-1;Customer;customer;2;2;Adress;123456-1234;12345678;1234-1234-1234-1234;User
-Tshirt;7746;Tshit;900.0;M;;;F;
-1;Customer;customer;2;2;Adress;123456-1234;12345678;1234-1234-1234-1234;User
