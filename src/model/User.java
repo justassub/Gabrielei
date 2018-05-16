@@ -149,6 +149,6 @@ public class User {
 
     public void removeProduct(Product product) {
         //Removes all user products with same ID
-        products.removeIf(product1 -> product.getID()==product1.getID());
+        products.removeIf(product1 -> product.getID() == product1.getID());
     }
 }

@@ -1,7 +1,6 @@
 package View;
 
 import Data.CustomerDatabase;
-import Data.ManagerData;
 import model.Manager;
 import model.User;
 

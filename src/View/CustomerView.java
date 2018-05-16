@@ -1,16 +1,8 @@
 package View;
 
-import Data.CustomerDatabase;
-import Data.ProductDatabase;
-import Data.ReadAndWrite;
-import model.Beer;
-import model.Product;
-import model.Tshirt;
 import model.User;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -186,9 +178,6 @@ public class CustomerView {
 
         return creditCard;
     }
-
-
-
 
 
 }

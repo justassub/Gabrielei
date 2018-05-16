@@ -1,13 +1,11 @@
 package View;
 
 import Data.ProductDatabase;
-
 import Data.ReadAndWrite;
 import model.Product;
 import model.User;
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -52,7 +50,7 @@ public class UserAddProducts {
             whatDoYouWantToDo(user);
         }
         for (Product product : user.getProducts()) {
-            if (product.getID()==Integer.parseInt(productId)) {
+            if (product.getID() == Integer.parseInt(productId)) {
                 productToRemove = product;
                 break;
             }
@@ -76,7 +74,7 @@ public class UserAddProducts {
         int productId = scanner.nextInt();
         for (Product product : products) {
             if (product.getID() == productId) {
-                System.out.println(product.getName()+" was added into basket.Price -"+product.getPrice());
+                System.out.println(product.getName() + " was added into basket.Price -" + product.getPrice());
                 user.addProduct(product);
             }
         }
